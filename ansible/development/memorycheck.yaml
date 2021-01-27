@@ -1,0 +1,11 @@
+---
+  - name: Memory
+    ##kimler olacak##
+    hosts: dev
+    ##ne olacak##
+    tasks:
+      - name: Memory Free
+        shell: "free -h"
+        register: output
+      - debug:
+          var: output

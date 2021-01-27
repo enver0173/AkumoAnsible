@@ -1,0 +1,18 @@
+---
+all:
+  hosts:
+    server1:
+      ansible_host: 104.236.33.83
+      localhost:
+      ansible_host: 138.197.68.233
+  children:
+    dev:
+      hosts:
+        centos:
+          ansible_host: 64.225.19.70
+        ubuntu:
+          ansible_host: 104.236.33.83
+    dev2:
+      hosts:
+        app:
+          ansible_host: 64.225.19.70

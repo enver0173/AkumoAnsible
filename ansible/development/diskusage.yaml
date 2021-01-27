@@ -1,0 +1,11 @@
+---
+  - name: Pinging Dev Servers
+    ##kimler olacak##
+    hosts: all
+    ##ne olacak##
+    tasks:
+      - name: Disk Free
+        shell: "df -h"
+        register: output
+      - debug:
+          var: output

@@ -1,0 +1,9 @@
+all:
+  hosts:
+    localhost:
+  children:
+    testservers:
+      hosts:
+        localhost:
+        host1:
+          ansible_host: 104.236.60.193

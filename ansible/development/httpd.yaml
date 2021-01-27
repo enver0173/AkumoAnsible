@@ -1,0 +1,20 @@
+---
+  - name:  install apache
+    ##kimler olacak##
+    hosts: centos
+    ##ne olacak##
+    tasks:
+      - name: install apache
+        yum:
+          name: httpd
+          state: latest
+      - name: make sure httpd started
+        systemd:
+          name: httpd
+          state: started
+          enabled: yes
+      - name: Copy file with owner and permissions
+        ansible.builtin.copy:
+          src: /tmp/index.html
+          dest: /var/www/html/
+          

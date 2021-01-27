@@ -1,0 +1,9 @@
+---
+  - name: Pinging Dev Servers
+    ##kimler olacak##
+    hosts: dev
+    ##ne olacak##
+    tasks:
+      - name: Ping
+        ping:
+

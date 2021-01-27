@@ -1,0 +1,10 @@
+---
+  - name: Copy index.html to remote server
+    ##kimler olacak##
+    hosts: centos
+    ##ne olacak##
+    tasks:
+      - name: Copy file with owner and permissions
+        ansible.builtin.copy:
+          src: /tmp/index.html
+          dest: /tmp/
