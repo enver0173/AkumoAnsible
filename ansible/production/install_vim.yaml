@@ -1,0 +1,16 @@
+---
+  - name: INstall vim
+    hosts: prod
+    tasks:
+      - name: Install vim
+        yum:
+          name: vim
+          state: latest
+        when:
+          - ansible_facts['distribution'] == "CentOS"
+      - name: Update All CEntos Servers
+        apt:
+          name: vim
+          state: latest
+        when:
+          - ansible_facts['distribution'] == "Ubuntu"

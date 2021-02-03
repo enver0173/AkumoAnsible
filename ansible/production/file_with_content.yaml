@@ -1,0 +1,10 @@
+---
+  - name: Create a file which is not existing with content
+    hosts: prod
+    tasks:
+      - name: creating a file 
+        copy:
+          dest: /tmp/ansible_file
+          content: |
+            Enver Guner
+            Betul Akman

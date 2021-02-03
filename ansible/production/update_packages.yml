@@ -1,0 +1,22 @@
+---
+  - name: Update
+    hosts: prod
+    tasks:
+      - name: Ping Servers
+        ping:
+        when:
+          - ansible_facts['distribution'] == "CentOS"
+  
+  
+      - name: Update All CEntos Servers
+        yum:
+          name: '*'
+          state: latest
+        when:
+          - ansible_facts['distribution'] == "CentOS"
+      - name: Update All CEntos Servers
+        apt:
+          name: '*'
+          state: latest
+        when:
+          - ansible_facts['distribution'] == "Ubuntu"
