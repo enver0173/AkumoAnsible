@@ -1,0 +1,30 @@
+---
+  - name: Install htop, curl, vim on all servers
+    hosts: all
+    gather_facts: yes
+    tasks:
+      - name: Install epel-release
+        when: ansible_facts['distribution'] == "CentOS"
+        yum: 
+          name: 
+          - epel-release
+        register: task1_result
+      - name: Install packages on CentOS
+        when: 
+        - ansible_facts['distribution'] == "CentOS"
+        - task1_result is success
+        yum:
+          name:
+          - htop
+          - vim
+          - curl
+          state: present
+      - name: Install packages on Ubuntu
+        when: 
+        - ansible_facts['distribution'] == "Ubuntu"
+        apt:
+          name:
+          - htop
+          - vim
+          - curl
+          state: present

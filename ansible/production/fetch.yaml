@@ -1,0 +1,12 @@
+---
+  - name: fetch
+    hosts: prod
+    gather_facts: yes
+    tasks:
+      - name: Fetch /tmp/enver.txt from Centos
+        when: 
+          - ansible_facts['distribution'] == "Ubuntu"
+          - ansible_facts['hostname'] == "ubuntu"
+        fetch:
+          src: /tmp/enver.txt
+          dest: /root/

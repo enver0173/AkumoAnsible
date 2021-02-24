@@ -1,0 +1,13 @@
+---
+  - name: Retrieve Hostname of Remove Servers
+    gather_facts: no
+    hosts: ubuntu
+    vars: 
+      myvariable:  "My name is Enver"
+      variable2: "My last name is Guner"
+    tasks:
+      - name: Ping Hosts
+        ping:
+      - name: Retrieve Hostname
+        debug:
+          msg: "{{ myvariable }}  {{ variable2 }}"

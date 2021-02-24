@@ -1,0 +1,13 @@
+---
+  - name: Ping servers with condiotion
+    hosts: prod
+    gather_facts:  no
+    tasks:
+      - name: Ping Servers if only group prod is defined in inventory file.
+        ping:
+        when: 
+          - "'dev' in group_names"
+         
+
+        
+      

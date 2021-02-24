@@ -1,15 +1,8 @@
 ---
 all:
   hosts:
-
+    
   children:
-    prod:
-      hosts:
-        centos:
-          ansible_host: 64.225.19.70
-          ansible_port: 55500    
-        ubuntu:
-          ansible_host: 104.236.33.83
     dev:
       hosts:
         centos:

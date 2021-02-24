@@ -1,0 +1,13 @@
+---
+  - name: Retrieve Hostname of Remove Servers
+    gather_facts: yes
+    hosts: all
+    vars: 
+      myvariable:  "My name is Enver"
+      variable2: "My last name is Guner"
+    tasks:
+      - name: Ping Hosts
+        ping:
+      - name: Retrieve Distribution and Major Version
+        debug:
+          msg: " Host =  {{ ansible_distribution }}  and Version {{ ansible_distribution_major_version }}"

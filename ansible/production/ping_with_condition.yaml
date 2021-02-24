@@ -1,0 +1,13 @@
+---
+  - name: Ping servers with condiotion
+    hosts: prod
+    gather_facts: yes
+    tasks:
+      - name: Ping Servers if only group prod is defined in inventory file.
+        ping:
+        when: 
+          - "'prod' in group_names"
+          - ansible_facts['distribution'] == "Ubuntu"          
+
+        
+      

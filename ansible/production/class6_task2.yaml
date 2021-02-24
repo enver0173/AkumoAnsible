@@ -1,0 +1,14 @@
+---
+  - name: copy file condition
+    hosts: localhost
+    gather_facts: yes
+    tasks:
+      - name: Copy file with owner and permissions
+        file:
+          path: /tmp/enver.txt
+          mode: '0666'
+        when:
+          - ansible_facts['hostname'] == "Ubuntu"          
+
+        
+      
